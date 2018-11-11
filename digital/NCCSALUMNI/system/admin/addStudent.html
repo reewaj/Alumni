@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Student page</title>
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <!-- CSS Files -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        
+                
+        
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet" media="screen">
+        <link href="css/owl.theme.css" rel="stylesheet">
+        <link href="css/owl.carousel.css" rel="stylesheet">
+
+        <!-- Colors -->
+        <link href="css/css-index.css" rel="stylesheet" media="screen">
+        <!-- <link href="css/css-index-green.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-purple.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-red.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-orange.css" rel="stylesheet" media="screen"> -->
+        <!-- <link href="css/css-index-yellow.css" rel="stylesheet" media="screen"> -->
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" />
+
+  
+</head>
+	
+<body data-spy="scroll" data-target="#navbar-scroll">
+
+  <div class="fullscreen landing parallax" style="background-image:url('img/abc.jpg');" data-img-width="5000" data-img-height="1333" data-diff="100">
+   
+        <div class="container">
+           <!-- <div class="col-md-8 col-md-offset-1 text-center">-->
+               
+                 <span class="highlight text-center"><h1>National College of Computer Studies</h1>
+                    <p>Welcome to NCCS Alumni System</p></span>
+                
+                    
+</div></div><!--</div>-->
+   
+
+ <div id="menu">
+            <nav class="navbar-wrapper navbar-default" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                       <!-- <a class="navbar-brand site-name" href="#top"><img src="images/logo2.png" alt="logo"></a>-->
+                    </div>
+
+                    <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="adminhome.php" >List of Students</a></li>
+                            <li><a href="addAdmin.html">Add Admin</a></li>
+                            <li><a href="addStudent.html">Add Students</a></li>
+                            <li><a href="addEvent.html">Add Events</a></li>
+                            <li><a href="userInfo.php">User Information</a></li>
+                            <li><a href="logout.php" style="float:left">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+		<!--<div class="background">-->  <!--Remove this to insert background-->
+    
+    <div class="container">
+                
+		    <!-- <h2>ADD NEW STUDENT</h2>-->
+              <center><table class="table table-bg ">
+		      <form action="addStudent.php" method="POST" class="form-horizontal"> 
+                   
+                 <h3>Add Students</h3>
+                  <tr><td><label>TU Registration Number</label> </td>
+                  <td colspan="3"><input type="text" class=" form-control" name="turegcode"  required> </td></tr>
+
+                  <tr><td><label>Full Name</label></td>
+                    <td><input type="text" class="  form-control" name="firstname" placeholder="First Name" required onkeyup="lettersOnly(this)"></td>
+                    <td><input type="text" class=" form-control" name="middlename" placeholder="Middle Name" onkeyup="lettersOnly(this)"></td>
+                    <td><input type="text" class=" form-control" name="lastname" placeholder="Last Name" required onkeyup="lettersOnly(this)"></td></tr>
+                  
+                  <tr><td><label>Address </label></td>
+                  <td colspan="3"><input type="text" class=" form-control" name="address" required onkeyup="noSpecial(this)"></td></tr>
+                  
+                  <tr><td><label>Contact </label></td>
+                  <td colspan="2"><input type="text" class=" form-control" name="mobilenumber" placeholder="Mobile Number" maxlength="10" required onkeyup="numbersOnly(this)"></td>
+                  <td colspan="1"><input type="text" class=" form-control" name="residentnumber" placeholder="Resident Number" maxlength="10" onkeyup="numbersOnly(this)"></td>
+                 </tr>
+                  
+                  <tr width=100%><td><label> Gender </label></td>
+                    <td>Male <input type="radio" name="gender" value="male"></td>
+                    <td>Female <input type="radio"  name="gender" value="female"></td></tr>
+                  
+                <tr><td><label>Date of birth </label></td>
+                    <td colspan="3"><input type="Date" class=" form-control" name="DOB" required></td></tr>
+                  
+                <tr><td><label>Email </label></td>
+                    <td colspan="3"><input type="email" class=" form-control" name="email" required></td></tr>
+                 
+                  <tr><td colspan="2"><center><input type="submit" value="Add Record" name="submit" class="btn btn-primary"> </center></td>
+                  <td colspan="4"> <input type="reset" value="Clear all" name="reset" class="btn btn-primary"> </td></tr>
+		
+			
+				
+                  </form> </table> </center>
+                  </div> 
+
+                  <script>
+                    function lettersOnly(input) {
+                      var regex = /[^a-z]/gi;
+                      //var regex = /[^a-zA-Z ]{2,30}$/
+                      input.value = input.value.replace(regex, "");
+                    }
+
+                    function noSpecial(input) {
+                      var regex = /[^a-zA-Z, ]/gi;
+                      //var regex = /[^a-zA-Z ]{2,30}$/
+                      input.value = input.value.replace(regex, "");
+                    }
+
+                    function numbersOnly(input) {
+                      var regex = /[^0-9]/gi;
+                      //var regex = /[^a-zA-Z ]{2,30}$/
+                      input.value = input.value.replace(regex, "");
+                    }
+                  </script>
+</body>
+</html>
